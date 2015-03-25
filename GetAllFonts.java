@@ -99,10 +99,12 @@ public class GetAllFonts extends Application {
 		btnBox.setPrefRows(2);
 		btnBox.setHgap(5);
 		btnBox.setVgap(5);
+		btnBox.setMaxWidth(400);
 		colorBox.setPadding(new Insets(10, 0, 0, 10));
 
 		// Instantiate the preview elements.
 		label = new Label();
+		label.setMinHeight(60);
 		field = new TextArea();
 		field.setEditable(true);
 		field.setWrapText(true);
