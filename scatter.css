@@ -1,0 +1,53 @@
+.grid {
+	-fx-background-color: white;
+    -fx-background-radius: 5.0;
+    -fx-background-insets: 0.0 5.0 0.0 5.0;
+    -fx-padding: 10 10 10 10;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}
+
+.chart-plot-background {
+	-fx-background-color: black;
+}
+
+.chart-vertical-grid-lines {
+	-fx-stroke: white;
+}
+
+.chart-horizontal-grid-lines {
+	-fx-stroke: white;
+}
+
+.chart-vertical-zero-line {
+	-fx-stroke: black;
+}
+
+.chart-vertical-zero-line {
+	-fx-stroke: black;
+}
+
+.chart {
+	-fx-background-color: DarkSeaGreen;
+	-fx-font-size: 12px;
+}
+
+.axis {
+	-fx-tick-label-fill: black;
+}
+
+.axis-label {
+	-fx-text-fill: black;
+	-fx-font-weight: bold;
+	-fx-font-size: 20px;
+}
+
+.label {
+	-fx-font-family: "Lucida Console";
+	-fx-font-size: 16px;
+}
+
+.border-pane {
+	-fx-background-color: DarkSeaGreen;
+	-fx-padding: 10, 2, 2, 10;
+}
