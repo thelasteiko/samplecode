@@ -23,8 +23,9 @@ import javafx.stage.Stage;
 /**
  * Simple Sketch application that draws lines, ovals and rectangles in various colors
  * and line widths. One day I might put all these private fields into a new class...
+ * TODO Put Canvas into separate class.
  * @author Melinda Robertson
- * @version 29 March 2015
+ * @version 17 April 2015
  */
 public class Sketch extends Application {
 	
@@ -174,33 +175,33 @@ public class Sketch extends Application {
 				case PENCIL:
 					break;
 				case CIRCLE:
-					if (p2.x > p1.x && p2.y > p1.y) {
-						gc.strokeOval(p1.x, p1.y,
-								p2.x - p1.x, p2.y - p1.y);
-					} else if (p2.x > p1.x && p1.y > p2.y) {
-						gc.strokeOval(p1.x, p2.y,
-								p2.x - p1.x, p1.y - p2.y);
-					} else if (p1.x > p2.x && p1.y > p2.y) {
-						gc.strokeOval(p2.x, p2.y,
-								p1.x - p2.x, p1.y - p2.y);
+					if (p2.getX() > p1.getX() && p2.getY() > p1.getY()) {
+						gc.strokeOval(p1.getX(), p1.getY(),
+								p2.getX() - p1.getX(), p2.getY() - p1.getY());
+					} else if (p2.getX() > p1.getX() && p1.getY() > p2.getY()) {
+						gc.strokeOval(p1.getX(), p2.getY(),
+								p2.getX() - p1.getX(), p1.getY() - p2.getY());
+					} else if (p1.getX() > p2.getX() && p1.getY() > p2.getY()) {
+						gc.strokeOval(p2.getX(), p2.getY(),
+								p1.getX() - p2.getX(), p1.getY() - p2.getY());
 					} else {
-						gc.strokeOval(p2.x, p1.y,
-								p1.x - p2.x, p2.y - p1.y);
+						gc.strokeOval(p2.getX(), p1.getY(),
+								p1.getX() - p2.getX(), p2.getY() - p1.getY());
 					}
 					break;
 				case RECTANGLE:
-					if (p2.x > p1.x && p2.y > p1.y) {
-						gc.strokeRect(p1.x, p1.y,
-								p2.x - p1.x, p2.y - p1.y);
-					} else if (p2.x > p1.x && p1.y > p2.y) {
-						gc.strokeRect(p1.x, p2.y,
-								p2.x - p1.x, p1.y - p2.y);
-					} else if (p1.x > p2.x && p1.y > p2.y) {
-						gc.strokeRect(p2.x, p2.y,
-								p1.x - p2.x, p1.y - p2.y);
+					if (p2.getX() > p1.getX() && p2.getY() > p1.getY()) {
+						gc.strokeRect(p1.getX(), p1.getY(),
+								p2.getX() - p1.getX(), p2.getY() - p1.getY());
+					} else if (p2.getX() > p1.getX() && p1.getY() > p2.getY()) {
+						gc.strokeRect(p1.getX(), p2.getY(),
+								p2.getX() - p1.getX(), p1.getY() - p2.getY());
+					} else if (p1.getX() > p2.getX() && p1.getY() > p2.getY()) {
+						gc.strokeRect(p2.getX(), p2.getY(),
+								p1.getX() - p2.getX(), p1.getY() - p2.getY());
 					} else {
-						gc.strokeRect(p2.x, p1.y,
-								p1.x - p2.x, p2.y - p1.y);
+						gc.strokeRect(p2.getX(), p1.getY(),
+								p1.getX() - p2.getX(), p2.getY() - p1.getY());
 					}
 					break;
 				}
@@ -308,21 +309,5 @@ public class Sketch extends Application {
 	 */
 	public static void main(String[] args) {
 		launch(args);
-	}
-	
-	/**
-	 * Private point class used to define the beginning and ending points
-	 * of a stroke.
-	 * @author Melinda Robertson
-	 * @version 29 March 2015
-	 */
-	private class Point2D {
-		double x;
-		double y;
-		
-		public Point2D(double x, double y) {
-			this.x = x;
-			this.y = y;
-		}
 	}
 }
